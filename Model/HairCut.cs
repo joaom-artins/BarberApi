@@ -9,15 +9,16 @@ namespace BarberAPI.Model
         [JsonIgnore]
         public Client? Client { get; set; }
         public DateTime ScheduledDate { get; set; }
-        public double Price { get; set; }
+        public decimal Price { get; set; }
         
         public HairCut() { }
 
-        public HairCut(int clientId, DateTime scheduledDate, double price)
+        public HairCut(int clientId, DateTime scheduledDate, decimal price)
         {
             ClientId = clientId;
             ScheduledDate = scheduledDate;
             Price = price;
         }
+        public string FormattedScheduledDate => ScheduledDate.ToString("dd/MM/yyyy-HH:mm");
     }
 }
