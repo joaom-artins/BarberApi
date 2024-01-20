@@ -17,6 +17,7 @@ namespace BarberAPI.Context
         {
             mb.Entity<Client>().HasKey(x => x.Id);
             mb.Entity<Client>().Property(x => x.Name).HasMaxLength(256).IsRequired();
+            mb.Entity<Client>().Property(x => x.Gender).IsRequired();
             mb.Entity<HairCut>().HasKey(x => x.Id);
             mb.Entity<HairCut>().Property(x => x.Price).HasPrecision(10, 2).IsRequired();
             mb.Entity<HairCut>()
